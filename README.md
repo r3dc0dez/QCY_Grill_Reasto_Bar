@@ -13,7 +13,7 @@ Restaurant website
 
   QCY is a fully responsive restaurant website, <br />Responsive for all devices, build using HTML, CSS, and JavaScript.
 
-  <a href="https://qcy-grill-reasto-bar.vercel.app/home.html"><strong>➥ Live Demo</strong></a>
+  <a href="https://qcy-grill-reasto-bar.vercel.app/home.html" target="_blank"><strong>➥ Live Demo</strong></a>
 
 </div>
 
