@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations | QCY Grill Resto & Bar</title>
+    <link rel="stylesheet" href=".css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <nav class="reservation-nav">
+        <div class="nav-brand">
+            <a href="home.html">
+            <img src="images/icon.ico" alt="QCY Logo" class="nav-logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="reservations.html">Reservations</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <header class="reservation-hero background-image" style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80')">
+        <div class="hero-content reservation-hero-content">
+            <h1>Reserve Your Table</h1>
+            <p>Experience exceptional dining at QCY Grill</p>
+        </div>
+    </header>
+
+        <section class="reservation-form-container" data-aos="fade-up">
+            <form id="reservationForm" class="reservation-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Select number of guests</option>
+                            <option value="1-2">1-2 Guests</option>
+                            <option value="3-4">3-4 Guests</option>
+                            <option value="5-6">5-6 Guests</option>
+                            <option value="7+">7+ Guests</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <label for="special-requests" class="italic bold">Special Requests?</label>
+                    <textarea id="special-requests" name="special-requests" rows="4"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Confirm Reservation</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>QCY Grill Resto & Bar</h3>
+                <p><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/place/QCY+GRILL+AND+RESTOBAR/@18.5501177,120.7945903,64m/data=!3m1!1e3!4m14!1m7!3m6!1s0x33892500226478e5:0x22184fe43f13ebcc!2sQCY+GRILL+AND+RESTOBAR!8m2!3d18.5500852!4d120.7946182!16s%2Fg%2F11vsh_xc02!3m5!1s0x33892500226478e5:0x22184fe43f13ebcc!8m2!3d18.5500852!4d120.7946182!16s%2Fg%2F11vsh_xc02?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" style="color: inherit; text-decoration: none;">Sitio baog 1, Pagudpud, Ilocos Norte, Philippines</a></p>
+                <p><i class="fas fa-phone"></i> +63 945 743 0535</p>
+                <p><i class="fas fa-envelope"></i> celerinamagarro@gmail.com</p>
+            </div>
+            <div class="footer-hours">
+                <h3>Opening Hours</h3>
+                <p>Tue-Sun: 8:00 AM - 11:00 PM</p>
+                <p>Mon: Closed</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/people/QCY-Grill-and-Restobar/61555705238356/"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Mikkel Bebe Poulin. All rights reserved.</p>
+            </div>
+        </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src=".js/main.js"></script>
+    <script src=".js/reservations.js"></script>
+</body>
+</html>

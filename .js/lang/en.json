@@ -1,0 +1,48 @@
+{
+    "consentModal": {
+      "label": "Cookie Consent",
+      "title": "Hello traveller, it's cookie time!",
+      "description": "Our website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it. The latter will be set only after consent.",
+      "acceptAllBtn": "Accept all",
+      "closeIconLabel": "Reject all and close",
+      "acceptNecessaryBtn": "Accept necessary",
+      "showPreferencesBtn": "Manage preferences",
+      "footer": "<a href=\"privacy-policy.html\">Privacy Policy</a><a href=\"terms-and-conditions.html\">Terms and conditions</a>"
+    },
+    "preferencesModal": {
+      "title": "Consent preferences center",
+      "acceptAllBtn": "Accept all",
+      "acceptNecessaryBtn": "Reject all",
+      "savePreferencesBtn": "Save preferences",
+      "closeIconLabel": "Close modal",
+      "serviceCounterLabel": "Service|Services",
+      "sections": [
+        {
+          "title": "Somebody said ... cookies?",
+          "description": "We use cookies to improve your experience, provide personalized content, and analyze our traffic. By continuing to browse, you agree to our use of cookies. Learn more about our cookie policy and how to manage your settings."
+        },
+            {
+                "title": "Strictly Necessary Cookies <span class=\"pm__badge\">Always Enabled</span>",
+                "description": "These cookies are essential for the website to function and cannot be disabled. They are typically set only in response to actions you take, such as setting your privacy preferences, logging in, or filling out forms.",
+                "linkedCategory": "necessary"
+              },
+              {
+                "title": "Analytics Cookies",
+                "description": "Analytics cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This helps us improve the user experience.",
+                "linkedCategory": "analytics",
+                "cookieTable": {
+                  "headers": {
+                    "name": "Cookie",
+                    "Service": "Service",
+                    "description": "Description"
+                  }
+                }
+              },
+              {
+                "title": "More Information",
+                "description": "If you have any questions about our cookie policy or your options, please <a class=\"cc__link\" href=\"contact.html\"> contact us</a>."
+            }
+              
+      ]
+    }
+  }
