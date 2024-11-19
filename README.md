@@ -47,7 +47,7 @@ git clone https://github.com/r3dc0dez/QCY_Grill_Reasto_Bar.git
 
 ### Contact
 
-If you want to contact with me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
+If you want to contact with me you can reach me on [Discord](https://discord.com/users/711836957201793056).
 
 ### License
 
