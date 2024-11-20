@@ -5,11 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu | QCY Grill Resto & Bar</title>
     <link rel="stylesheet" href=".css/main.css">
-    <link icon type="image/x-icon" href="images/icon.ico">
+    <link rel="icon" type="image/x-icon" href="images/icon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
+    <div class="cart-icon" onclick="toggleCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+    </div>
+
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items">
+            <div class="cart-empty" style="display: none;">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-summary">
+            <div class="cart-total-wrapper">
+                <span class="cart-total-label">Total Amount</span>
+                <span class="cart-total">₱0.00</span>
+            </div>
+            <button class="checkout-btn" onclick="cart.submitOrder()">
+                <i class="fas fa-shopping-bag"></i>
+                Place Order
+            </button>
+        </div>
+    </div>
+
     <nav class="reservation-nav">
         <div class="nav-brand">
             <a href="home.html">
@@ -24,16 +54,26 @@
             <a href="contact.html">Contact</a>
         </div>
     </nav>
-
+<br>
     <section class="menu-header" data-aos="fade-up">
         <div class="container">
             <h2 class="section-title">Our Menu Selection</h2>
             <div class="menu-categories">
-                <button class="category-btn active">All</button>
-                <button class="category-btn">Appetizers</button>
-                <button class="category-btn">Main Course</button>
-                <button class="category-btn">Seafood</button>
-                <button class="category-btn">Desserts</button>
+                <button class="category-btn active" data-category="all">
+                    <span>All Menu</span>
+                </button>
+                <button class="category-btn" data-category="appetizers">
+                    <span>Appetizers</span>
+                </button>
+                <button class="category-btn" data-category="main">
+                    <span>Main Course</span>
+                </button>
+                <button class="category-btn" data-category="seafood">
+                    <span>Seafood</span>
+                </button>
+                <button class="category-btn" data-category="desserts">
+                    <span>Desserts</span>
+                </button>
             </div>
         </div>
     </section>
@@ -41,48 +81,167 @@
     <section class="menu-items" data-aos="fade-up">
         <div class="container">
             <div class="menu-grid">
-                <div class="menu-item">
+                <!-- Appetizers -->
+                <div class="menu-item" data-category="appetizers">
                     <div class="menu-image">
-                        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80" alt="Wagyu Steak">
+                        <img src="https://images.unsplash.com/photo-1625938144755-652e08e359b7" alt="Calamari">
                         <div class="menu-overlay">
-                            <span class="cuisine-tag">Premium Cut</span>
+                            <span class="cuisine-tag">Appetizer</span>
                         </div>
                     </div>
                     <div class="menu-item-content">
-                        <h3>A5 Wagyu Ribeye</h3>
-                        <p>Japanese Wagyu beef with truffle butter and roasted garlic</p>
-                        <span class="price">₱2,500</span>
-                        <button class="order-btn">Order Now</button>
+                        <h3>Crispy Calamari</h3>
+                        <p>Tender squid rings, lightly breaded and fried, served with garlic aioli</p>
+                        <span class="price">₱320</span>
+                        <button class="order-btn" onclick="cart.addItem({
+                            name: 'Crispy Calamari',
+                            price: 320,
+                            image: 'https://images.unsplash.com/photo-1625938144755-652e08e359b7',
+                            quantity: 1
+                        })">Add to Cart</button>
                     </div>
                 </div>
 
-                <div class="menu-item">
+                <div class="menu-item" data-category="appetizers">
                     <div class="menu-image">
-                        <img src="https://images.unsplash.com/photo-1695606452859-d1103fba6a14?q=80" alt="Seafood Platter">
+                        <img src="https://images.unsplash.com/photo-1541014741259-de529411b96a" alt="Bruschetta">
                         <div class="menu-overlay">
-                            <span class="cuisine-tag">Ocean Fresh</span>
+                            <span class="cuisine-tag">Appetizer</span>
                         </div>
                     </div>
                     <div class="menu-item-content">
-                        <h3>Royal Seafood Platter</h3>
-                        <p>Fresh lobster, king crab, oysters, and tiger prawns</p>
-                        <span class="price">₱3,200</span>
-                        <button class="order-btn">Order Now</button>
+                        <h3>Classic Bruschetta</h3>
+                        <p>Toasted bread topped with fresh tomatoes, basil, and garlic</p>
+                        <span class="price">₱280</span>
+                        <button class="order-btn" onclick="cart.addItem({
+                            name: 'Classic Bruschetta',
+                            price: 280,
+                            image: 'https://images.unsplash.com/photo-1541014741259-de529411b96a',
+                            quantity: 1
+                        })">Add to Cart</button>
                     </div>
                 </div>
 
-                <div class="menu-item">
+                <!-- Main Courses -->
+                <div class="menu-item" data-category="main">
                     <div class="menu-image">
-                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80" alt="Lamb Rack">
+                        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e" alt="Ribeye Steak">
                         <div class="menu-overlay">
-                            <span class="cuisine-tag">Chef's Special</span>
+                            <span class="cuisine-tag">Main Course</span>
                         </div>
                     </div>
                     <div class="menu-item-content">
-                        <h3>Herb Crusted Lamb Rack</h3>
-                        <p>New Zealand lamb with rosemary crust and mint sauce</p>
-                        <span class="price">₱1,800</span>
-                        <button class="order-btn">Order Now</button>
+                        <h3>Premium Ribeye Steak</h3>
+                        <p>12oz perfectly marbled ribeye, grilled to your preference with roasted vegetables</p>
+                        <span class="price">₱1,200</span>
+                        <button class="order-btn" onclick="cart.addItem({
+                            name: 'Premium Ribeye Steak',
+                            price: 1200,
+                            image: 'https://images.unsplash.com/photo-1600891964092-4316c288032e',
+                            quantity: 1
+                        })">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="main">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1496074620649-6b1b02e5c1c8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JpbGxlZCUyMGNoaWNrZW58ZW58MHx8MHx8fDA%3D" alt="Grilled Chicken">
+                        <div class="menu-overlay">
+                            <span class="cuisine-tag">Main Course</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Herb-Grilled Chicken</h3>
+                        <p>Marinated chicken breast with fresh herbs, served with quinoa and seasonal vegetables</p>
+                        <span class="price">₱650</span>
+                        <button class="order-btn" onclick="cart.addItem({
+                            name: 'Herb-Grilled Chicken',
+                            price: 650,
+                            image: 'https://images.unsplash.com/photo-1496074620649-6b1b02e5c1c8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JpbGxlZCUyMGNoaWNrZW58ZW58MHx8MHx8fDA%3D',
+                            quantity: 1
+                        })">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Seafood -->
+                <div class="menu-item" data-category="seafood">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1551248429-40975aa4de74" alt="Grilled Salmon">
+                        <div class="menu-overlay">
+                            <span class="cuisine-tag">Seafood</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Grilled Atlantic Salmon</h3>
+                        <p>Fresh salmon fillet with lemon butter sauce and asparagus</p>
+                        <span class="price">₱850</span>
+                        <button class="order-btn" onclick="cart.addItem({
+                            name: 'Grilled Atlantic Salmon',
+                            price: 850,
+                            image: 'https://images.unsplash.com/photo-1551248429-40975aa4de74',
+                            quantity: 1
+                        })">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="seafood">
+                    <div class="menu-image">
+                        <img src="https://plus.unsplash.com/premium_photo-1708077041271-aa4912a349a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2VhZm9vZCUyMHBhc3RhfGVufDB8fDB8fHww" alt="Seafood Pasta">
+                        <div class="menu-overlay">
+                            <span class="cuisine-tag">Seafood</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Seafood Linguine</h3>
+                        <p>Fresh pasta with shrimp, mussels, and calamari in white wine sauce</p>
+                        <span class="price">₱780</span>
+                        <button class="order-btn" onclick="cart.addItem({
+                            name: 'Seafood Linguine',
+                            price: 780,
+                            image: 'https://plus.unsplash.com/premium_photo-1708077041271-aa4912a349a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2VhZm9vZCUyMHBhc3RhfGVufDB8fDB8fHww',
+                            quantity: 1
+                        })">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-item" data-category="desserts">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307" alt="Chocolate Lava Cake">
+                        <div class="menu-overlay">
+                            <span class="cuisine-tag">Dessert</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Chocolate Lava Cake</h3>
+                        <p>Warm chocolate cake with molten center, served with vanilla ice cream</p>
+                        <span class="price">₱320</span>
+                        <button class="order-btn" onclick="cart.addItem({
+                            name: 'Chocolate Lava Cake',
+                            price: 320,
+                            image: 'https://images.unsplash.com/photo-1551024506-0bccd828d307',
+                            quantity: 1
+                        })">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="desserts">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187" alt="Cheesecake">
+                        <div class="menu-overlay">
+                            <span class="cuisine-tag">Dessert</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>New York Cheesecake</h3>
+                        <p>Classic cheesecake with berry compote and whipped cream</p>
+                        <span class="price">₱280</span>
+                        <button class="order-btn" onclick="cart.addItem({
+                            name: 'New York Cheesecake',
+                            price: 280,
+                            image: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187',
+                            quantity: 1
+                        })">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -110,12 +269,11 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2024 Mikkel Bebe Poulin. All rights reserved.</p>
+                <p>&copy; 2024 QCY Grill Resto & Bar. Designed by Mikkel Bebe Poulin.</p>
             </div>
         </footer>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src=".js/main.js"></script>
-</body>
-</html>
+    <script src=".js/cart.js"></script>
 </body>
 </html>
