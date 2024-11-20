@@ -111,3 +111,24 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavScroll();
     initAutoSlider();
 });
+
+function URLenchanter() {
+    const url = window.location.href;
+    let newUrl = url;
+    newUrl = newUrl.replace('http://', 'https://');
+    if (newUrl.endsWith('.html')) {
+        newUrl = newUrl.slice(0, -5); 
+    } else {
+        const pathParts = newUrl.split('/');
+        const lastPart = pathParts[pathParts.length - 1];
+        
+        if (lastPart && !lastPart.includes('.')) {
+            newUrl = newUrl + '.html';
+            newUrl = newUrl.slice(0, -5);
+        }
+    }
+
+    if (newUrl !== url) {
+        window.location.href = newUrl;
+    }
+}
