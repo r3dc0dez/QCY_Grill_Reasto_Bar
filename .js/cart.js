@@ -1,3 +1,4 @@
+// Made by: @mkl.08 (Discord) | Mikkel Bebe Poulin | 2024 
 class Cart {
     constructor() {
         this.items = [];

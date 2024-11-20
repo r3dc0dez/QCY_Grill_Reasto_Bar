@@ -1,3 +1,4 @@
+<!--Made by: @mkl.08 (Discord) | Mikkel Bebe Poulin | 2024-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservations | QCY Grill Resto & Bar</title>
     <link rel="stylesheet" href=".css/main.css">
+    <link rel="stylesheet" href=".css/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -36,39 +38,39 @@
             <form id="reservationForm" class="reservation-form">
                 <div class="form-grid">
                     <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder=" " required>
                         <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder=" " required>
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder=" " required>
                         <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" required>
                     </div>
                     <div class="form-group">
+                        <input type="date" id="date" name="date" placeholder=" " required>
                         <label for="date">Date</label>
-                        <input type="date" id="date" name="date" required>
                     </div>
                     <div class="form-group">
+                        <input type="time" id="time" name="time" placeholder=" " required>
                         <label for="time">Time</label>
-                        <input type="time" id="time" name="time" required>
                     </div>
                     <div class="form-group">
-                        <label for="guests">Number of Guests</label>
                         <select id="guests" name="guests" required>
-                            <option value="">Select number of guests</option>
+                            <option value="" disabled selected></option>
                             <option value="1-2">1-2 Guests</option>
                             <option value="3-4">3-4 Guests</option>
                             <option value="5-6">5-6 Guests</option>
                             <option value="7+">7+ Guests</option>
                         </select>
+                        <label for="guests">Number of Guests</label>
                     </div>
                 </div>
                 <div class="form-group full-width">
+                    <textarea id="special-requests" name="special-requests" rows="4" placeholder=" "></textarea>
                     <label for="special-requests" class="italic bold">Special Requests?</label>
-                    <textarea id="special-requests" name="special-requests" rows="4"></textarea>
                 </div>
                 <button type="submit" class="submit-btn">
                     <span class="btn-text">Confirm Reservation</span>

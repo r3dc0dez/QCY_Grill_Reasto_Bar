@@ -1,4 +1,4 @@
-// Made by: Mikkel Bebe Poulin
+// Made by: @mkl.08 (Discord) | Mikkel Bebe Poulin | 2024 
 AOS.init({
     duration: 800,
     offset: 100,

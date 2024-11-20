@@ -1,0 +1,173 @@
+<!--Made by: @mkl.08 (Discord) | Mikkel Bebe Poulin | 2024-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | QCY Grill Resto & Bar</title>
+    <link rel="stylesheet" href=".css/main.css">
+    <link rel="stylesheet" href=".css/contact.css">
+    <link rel="icon" type="image/x-icon" href="images/icon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-brand">
+            <a href="home.html">
+                <img src="images/icon.ico" alt="QCY Logo" class="nav-logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="reservations.html">Reservations</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html" class="active">Contact</a>
+        </div>
+    </nav>
+    <header class="hero-slider">
+        <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/contact-hero.jpg')">
+            <div class="slide-content" data-aos="fade-up">
+                <h1>Let's Connect</h1>
+                <p>We're here to serve you better</p>
+            </div>
+        </div>
+    </header>
+    <section class="quick-contact" data-aos="fade-up">
+        <div class="container">
+            <div class="contact-cards">
+                <div class="contact-card" data-aos="zoom-in">
+                    <div class="card-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>+63 945 743 0535</p>
+                    <a href="tel:+639457430535" class="contact-btn">Call Now</a>
+                </div>
+                <div class="contact-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>celerinamagarro@gmail.com</p>
+                    <a href="mailto:celerinamagarro@gmail.com" class="contact-btn">Send Email</a>
+                </div>
+                <div class="contact-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>Sitio baog 1, Pagudpud</p>
+                    <a href="https://www.google.com/maps/place/QCY+GRILL+AND+RESTOBAR/@18.5501177,120.7945903,64m/data=!3m1!1e3!4m14!1m7!3m6!1s0x33892500226478e5:0x22184fe43f13ebcc!2sQCY+GRILL+AND+RESTOBAR!8m2!3d18.5500852!4d120.7946182!16s%2Fg%2F11vsh_xc02!3m5!1s0x33892500226478e5:0x22184fe43f13ebcc!8m2!3d18.5500852!4d120.7946182!16s%2Fg%2F11vsh_xc02?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="contact-btn">Get Directions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact-section" data-aos="fade-up">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-form-wrapper">
+                    <h2>Send us a Message</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="name" required>
+                                <label for="name">Full Name</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" required>
+                                <label for="email">Email Address</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="tel" id="phone" required>
+                                <label for="phone">Phone Number</label>
+                            </div>
+                            <div class="form-group">
+                                <select id="subject" required>
+                                    <option value="">Select Purpose</option>
+                                    <option value="reservation">Table Reservation</option>
+                                    <option value="event">Private Event</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="info-content">
+                        <h3>Business Hours</h3>
+                        <ul class="hours-list">
+                            <li><span>Monday:</span> Closed</li>
+                            <li><span>Tuesday - Sunday:</span> 8:00 AM - 11:00 PM</li>
+                        </ul>
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/people/QCY-Grill-and-Restobar/61555705238356/" class="social-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="map-section" data-aos="fade-up">
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3835.7227337644483!2d120.79203931484233!3d18.550085287384925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33892500226478e5%3A0x22184fe43f13ebcc!2sQCY%20GRILL%20AND%20RESTOBAR!5e0!3m2!1sen!2sph!4v1645000000000!5m2!1sen!2sph"
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>QCY Grill Resto & Bar</h3>
+                <p><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/place/QCY+GRILL+AND+RESTOBAR/@18.5501177,120.7945903,64m/data=!3m1!1e3!4m14!1m7!3m6!1s0x33892500226478e5:0x22184fe43f13ebcc!2sQCY+GRILL+AND+RESTOBAR!8m2!3d18.5500852!4d120.7946182!16s%2Fg%2F11vsh_xc02!3m5!1s0x33892500226478e5:0x22184fe43f13ebcc!8m2!3d18.5500852!4d120.7946182!16s%2Fg%2F11vsh_xc02?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" style="color: inherit; text-decoration: none;">Sitio baog 1, Pagudpud, Ilocos Norte, Philippines</a></p>
+                <p><i class="fas fa-phone"></i> +63 945 743 0535</p>
+                <p><i class="fas fa-envelope"></i> celerinamagarro@gmail.com</p>
+            </div>
+            <div class="footer-hours">
+                <h3>Opening Hours</h3>
+                <p>Tue-Sun: 8:00 AM - 11:00 PM</p>
+                <p>Mon: Closed</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/people/QCY-Grill-and-Restobar/61555705238356/"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 QCY Grill Resto & Bar. Designed by Mikkel Bebe Poulin.</p>
+            </div>
+        </footer>
+    <div class="notification" id="notification"></div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src=".js/contact.js"></script>
+</body>
+</html>

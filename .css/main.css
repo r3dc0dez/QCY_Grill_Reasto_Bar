@@ -1,4 +1,4 @@
-/* Made by: @mkl.08 (Discord) */
+/* Made by: @mkl.08 (Discord) | Mikkel Bebe Poulin | 2024 */
 :root {
     --primary: #ff4757;
     --secondary: #2f3542;
@@ -1126,7 +1126,6 @@ footer {
     }
 }
 
-/* Cart Item Animations */
 @keyframes slideOutRight {
     from {
         transform: translateX(0);
@@ -1153,7 +1152,6 @@ footer {
     }
 }
 
-/* Remove Button Styles */
 .remove-btn {
     background: none;
     border: none;
@@ -1178,7 +1176,6 @@ footer {
     transform: scale(0.95);
 }
 
-/* Notification Styles */
 .notification {
     position: fixed;
     bottom: 20px;
@@ -1212,7 +1209,6 @@ footer {
     }
 }
 
-/* Empty Cart State */
 .cart-empty {
     text-align: center;
     padding: 40px 20px;
@@ -1299,4 +1295,78 @@ footer {
     .team-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    padding: 0 5px;
+    transition: all 0.2s ease-in-out;
+    pointer-events: none;
+    color: #666;
+}
+
+.form-group input:focus ~ label,
+.form-group input:not(:placeholder-shown) ~ label,
+.form-group select:focus ~ label,
+.form-group select:not(:placeholder-shown) ~ label {
+    top: 0;
+    font-size: 0.8em;
+    color: #333;
+}
+
+.form-group.full-width label {
+    top: 10px;
+    transform: none;
+}
+
+.form-group.full-width textarea:focus ~ label,
+.form-group.full-width textarea:not(:placeholder-shown) ~ label {
+    top: -10px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group.full-width {
+    position: relative;
+}
+
+.form-group.full-width label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: white;
+    padding: 0 5px;
+    transition: all 0.2s ease-in-out;
+    pointer-events: none;
+}
+
+.form-group.full-width textarea:focus ~ label,
+.form-group.full-width textarea:not(:placeholder-shown) ~ label {
+    top: -10px;
+    font-size: 0.8em;
+    color: #333;
+}
+
+.form-group.full-width textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
 }
