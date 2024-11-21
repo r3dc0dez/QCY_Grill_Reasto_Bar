@@ -1,4 +1,4 @@
-// Made by: @mkl.08 (Discord) | Mikkel Bebe Poulin | 2024 
+// Made by: @mkl.08 (Discord) | @pomcodes | 2024 
 const im = iframemanager();
 
 im.run({
