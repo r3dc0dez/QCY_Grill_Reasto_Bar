@@ -2,7 +2,7 @@
 class Cart {
     constructor() {
         this.items = [];
-        this.webhookUrl = 'https://discord.com/api/webhooks/1308469122933198888/c9ivFU8vjXIhWJoeqJwtDOYFJVoyb623qKOg9rStcu3wgEadjTIOuWYaWe7UmJHcSYCX';
+        this.webhookUrl = '';
         this.isOpen = false;
     }
 
