@@ -1,6 +1,6 @@
 // Made by: @mkl.08 (Discord) | @pomcodes | 2024 
 document.addEventListener('DOMContentLoaded', () => {
-    const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1308469122933198888/c9ivFU8vjXIhWJoeqJwtDOYFJVoyb623qKOg9rStcu3wgEadjTIOuWYaWe7UmJHcSYCX';
+    const DISCORD_WEBHOOK_URL = '';
     const form = document.getElementById('reservationForm');
     
     form.addEventListener('submit', async (e) => {
