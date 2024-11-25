@@ -1,0 +1,163 @@
+<!--Made by: @mkl.08 (Discord) | @pomcodes | 2024-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - QCY Grill</title>
+    <link rel="stylesheet" href=".css/payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<style>
+.nav {
+    background: rgba(255, 255, 255, 0);
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.nav-brand img {
+    height: 60px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    color: var(--light);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+    background: rgba(255,255,255,0.1);
+}
+</style>
+<body>
+    <nav class="nav">
+        <div class="nav-brand">
+            <a href="home.html">
+                <img src="images/icon.ico" alt="QCY Logo" class="nav-logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="reservations.html">Reservations</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+    <div class="payment-container">
+        <div class="order-summary">
+            <h2><i class="fas fa-shopping-cart"></i> Order Summary</h2>
+            <div id="order-items"></div>
+            <div class="currency-converter">
+                <label for="currency-select">Select Currency:</label>
+                <select id="currency-select">
+                    <option value="PHP">Philippine Peso (₱)</option>
+                    <option value="USD">US Dollar ($)</option>
+                    <option value="EUR">Euro (€)</option>
+                    <option value="DKK">Danish Krone (kr.)</option>
+                </select>
+                <div id="total-amount"></div>
+            </div>
+            <button id="cancelOrder" class="cancel-btn" href="menu.html">
+                <i class="fas fa-times"></i> Cancel Order
+            </button>
+        </div>
+
+        <div class="payment-form">
+            <div class="steps">
+                <div class="step active" id="step1">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="step" id="step2">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="step" id="step3">
+                    <i class="fas fa-check"></i>
+                </div>
+            </div>
+
+            <form id="customerForm">
+                <div class="form-section" id="section1">
+                    <h3><i class="fas fa-user-circle"></i> Personal Information</h3>
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="fullName" name="fullName" placeholder="Full Name">
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" id="address" name="address" placeholder="Delivery Address">
+                    </div>
+                    
+                    <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                    
+                    <button type="button" id="verifyEmail" class="primary-btn">
+                        <i class="fas fa-arrow-right"></i> Continue
+                    </button>
+                </div>
+
+                <div class="form-section hidden" id="section2">
+                    <h3><i class="fas fa-robot"></i> Verification</h3>
+                    <div class="verification-container">
+                        <div class="captcha-box">
+                            <div class="blur-container">
+                                <div id="captchaText" class="captcha-text">Loading...</div>
+                            </div>
+                            <button type="button" id="holdButton" class="hold-button">
+                                Hold to Reveal
+                            </button>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-keyboard"></i>
+                            <input type="text" 
+                                id="captchaInput" 
+                                placeholder="Type the word you see above" 
+                                autocomplete="off">
+                        </div>
+                        <button type="button" id="verifyCaptcha" class="primary-btn">
+                            <i class="fas fa-check"></i> Verify
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-section hidden" id="section3">
+                    <h3><i class="fas fa-check-circle"></i> Order Confirmation</h3>
+                    <div class="confirmation-message">
+                        <p>Your order has been received! QCY will contact you shortly on your provided phone number.</p>
+                        <p>To complete the billing process, please pay the total amount.</p>
+                        <div class="transaction-info">
+                            <p>Transaction ID:</p>
+                            <span id="transactionId"></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src=".js/payment.js"></script>
+</body>
+</html>

@@ -55,51 +55,9 @@ class Cart {
             return;
         }
 
-        const total = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        localStorage.setItem('cartItems', JSON.stringify(this.items));
         
-        const orderDetails = {
-            embeds: [{
-                title: "🛍️ New Order Received!",
-                color: 0xFF4757,
-                fields: [
-                    ...this.items.map(item => ({
-                        name: item.name,
-                        value: `Price: ₱${item.price}\nQuantity: ${item.quantity}\nSubtotal: ₱${item.price * item.quantity}`,
-                        inline: true
-                    })),
-                    {
-                        name: "Total Amount",
-                        value: `₱${total.toFixed(2)}`,
-                        inline: false
-                    }
-                ],
-                timestamp: new Date().toISOString(),
-                footer: {
-                    text: "QCY Grill Resto & Bar"
-                }
-            }]
-        };
-
-        try {
-            const response = await fetch(this.webhookUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(orderDetails)
-            });
-
-            if (response.ok) {
-                this.items = [];
-                this.updateCartUI();
-                this.showNotification('Order placed successfully!', 'success');
-                this.toggleCart();
-            } else {
-                throw new Error('Failed to submit order');
-            }
-        } catch (error) {
-            this.showNotification('Failed to place order. Please try again.', 'error');
-        }
+        window.location.href = 'payment.html';
     }
 
     removeItem(index) {
