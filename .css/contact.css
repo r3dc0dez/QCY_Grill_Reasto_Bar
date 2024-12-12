@@ -73,7 +73,6 @@
     transform: translateY(-2px);
 }
 
-/* Contact Form Section */
 .contact-section {
     padding: 80px 5%;
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
@@ -175,7 +174,6 @@
     box-shadow: 0 5px 15px rgba(255,71,87,0.3);
 }
 
-/* Contact Info Styling */
 .info-content {
     padding: 40px;
     background: white;
@@ -222,7 +220,6 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Map Section */
 .map-section {
     padding: 80px 5%;
 }
@@ -233,7 +230,6 @@
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
 }
 
-/* Notification Styling */
 .notification {
     position: fixed;
     bottom: 20px;
@@ -258,7 +254,6 @@
     transform: translateY(0);
 }
 
-/* Responsive Design */
 @media (max-width: 992px) {
     .contact-grid {
         grid-template-columns: 1fr;
@@ -287,7 +282,6 @@
     }
 }
 
-/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
