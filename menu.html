@@ -64,16 +64,19 @@
                     <span>All Menu</span>
                 </button>
                 <button class="category-btn" data-category="appetizers">
-                    <span>Appetizers</span>
+                    <span>Hotpot</span>
                 </button>
                 <button class="category-btn" data-category="main">
                     <span>Main Course</span>
                 </button>
+                <button class="category-btn" data-category="noodles">
+                    <span>Noodles</span>
+                </button>
                 <button class="category-btn" data-category="seafood">
-                    <span>Seafood</span>
+                    <span>Local Favorites</span>
                 </button>
                 <button class="category-btn" data-category="desserts">
-                    <span>Desserts</span>
+                    <span>Bagnet</span>
                 </button>
             </div>
         </div>
@@ -83,21 +86,41 @@
         <div class="container">
             <div class="menu-grid">
                 <!-- Appetizers -->
-                <div class="menu-item" data-category="appetizers">
+                <div class="menu-item" data-category="main">
                     <div class="menu-image">
-                        <img src="https://images.unsplash.com/photo-1625938144755-652e08e359b7" alt="Calamari">
+                        <img src="images/IMG-20241128-WA0019.jpg" alt="Bulalo">
                         <div class="menu-overlay">
-                            <span class="cuisine-tag">Appetizer</span>
+                            <span class="cuisine-tag">Main Course</span>
                         </div>
                     </div>
                     <div class="menu-item-content">
-                        <h3>Crispy Calamari</h3>
-                        <p>Tender squid rings, lightly breaded and fried, served with garlic aioli</p>
-                        <span class="price">₱320</span>
+                        <h3>Bulalo</h3>
+                        <p>Boiled Beef Shanks and bone marrow with vegetables. Good for 2 to 3 pax</p>
+                        <span class="price">₱250</span>
                         <button class="order-btn" onclick="cart.addItem({
-                            name: 'Crispy Calamari',
-                            price: 320,
-                            image: 'https://images.unsplash.com/photo-1625938144755-652e08e359b7',
+                            name: 'Bulalo',
+                            price: 250,
+                            image: 'images/IMG-20241128-WA0019.jpg',
+                            quantity: 1
+                        })">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="desserts">
+                    <div class="menu-image">
+                        <img src="images/IMG-20241205-WA0001.jpg" alt="Bagnet">
+                        <div class="menu-overlay">
+                            <span class="cuisine-tag">Bagnet</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>BAGNET WITH KBL</h3>
+                        <p>Deep Fried Pork with KBL (Kamatis, Bagoong at Lasona) - A crispy Ilocano delicacy served with local condiments</p>
+                        <span class="price">₱250</span>
+                        <button class="order-btn" onclick="cart.addItem({
+                            name: 'Bagnet with KBL',
+                            price: 250,
+                            image: 'images/IMG-20241205-WA0001.jpg',
                             quantity: 1
                         })">Add to Cart</button>
                     </div>
@@ -105,7 +128,187 @@
 
                 <div class="menu-item" data-category="appetizers">
                     <div class="menu-image">
-                        <img src="https://images.unsplash.com/photo-1541014741259-de529411b96a" alt="Bruschetta">
+                        <img src="images/IMG-20241128-WA0017.jpg" alt="Unli Hotpot">
+                        <div class="menu-overlay">
+                            <span class="cuisine-tag">Hotpot</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Unli Hotpot</h3>
+                        <p>Unlimited soup base with variety of fresh vegetables, meat, and seafood. Perfect for group dining!</p>
+                        <span class="price">₱1,200</span>
+                        <button class="order-btn" onclick="cart.addItem({
+                            name: 'Unli Hotpot',
+                            price: 1200,
+                            image: 'images/IMG-20241128-WA0017.jpg',
+                            quantity: 1
+                        })">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="appetizers">
+                    <div class="menu-image">
+                        <img src="images/IMG-20241128-WA0016.jpg" alt="Samgyupsal">
+                        <div class="menu-overlay">
+                            <span class="cuisine-tag">Hotpot</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Samgyupsal</h3>
+                        <p>Korean-style pork belly BBQ served with fresh vegetables and traditional side dishes</p>
+                        <span class="price">₱650</span>
+                        <button class="order-btn" onclick="cart.addItem({
+                            name: 'Samgyupsal',
+                            price: 650,
+                            image: 'images/IMG-20241128-WA0016.jpg',
+                            quantity: 1
+                        })">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="seafood">
+                    <div class="menu-image">
+                        <img src="images/IMG-20241128-WA0015.jpg" alt="Bagnet Sinigang">
+                        <div class="menu-overlay">
+                            <span class="cuisine-tag">Local Favorites</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Bagnet Sinigang</h3>
+                        <p>Crispy pork bagnet served in a sour tamarind soup with fresh vegetables - A unique twist on the classic sinigang</p>
+                        <span class="price">₱850</span>
+                        <button class="order-btn" onclick="cart.addItem({
+                            name: 'Bagnet Sinigang',
+                            price: 850,
+                            image: 'images/IMG-20241128-WA0015.jpg',
+                            quantity: 1
+                        })">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="main">
+                    <div class="menu-image">
+                        <img src="images/IMG-20241128-WA0014.jpg" alt="Beef Pares with Bagnet">
+                        <div class="menu-overlay">
+                            <span class="cuisine-tag">Main Course</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Beef Pares with Bagnet</h3>
+                        <p>Tender braised beef with special pares sauce, served with crispy bagnet and garlic rice</p>
+                        <span class="price">₱780</span>
+                        <button class="order-btn" onclick="cart.addItem({
+                            name: 'Beef Pares with Bagnet',
+                            price: 780,
+                            image: 'images/IMG-20241128-WA0014.jpg',
+                            quantity: 1
+                        })">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="seafood">
+                    <div class="menu-image">
+                        <img src="images/IMG-20241128-WA0013.jpg" alt="Paksiw">
+                        <div class="menu-overlay">
+                            <span class="cuisine-tag">Local Favorites</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Paksiw</h3>
+                        <p>Fish cooked in vinegar with ginger and spices - A traditional Filipino dish perfect with steamed rice</p>
+                        <span class="price">₱320</span>
+                        <button class="order-btn" onclick="cart.addItem({
+                            name: 'Paksiw',
+                            price: 320,
+                            image: 'images/IMG-20241128-WA0013.jpg',
+                            quantity: 1
+                        })">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="noodles">
+                    <div class="menu-image">
+                        <img src="images/IMG-20241128-WA0012.jpg" alt="Hibol">
+                        <div class="menu-overlay">
+                            <span class="cuisine-tag">Noodles</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Hibol</h3>
+                        <p>Special Ilocano noodle soup with mixed vegetables and meat - A comforting local favorite</p>
+                        <span class="price">₱280</span>
+                        <button class="order-btn" onclick="cart.addItem({
+                            name: 'Hibol',
+                            price: 280,
+                            image: 'images/IMG-20241128-WA0012.jpg',
+                            quantity: 1
+                        })">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="noodles">
+                    <div class="menu-image">
+                        <img src="images/IMG-20241128-WA0011.jpg" alt="Bihon Guisado & Lumpia Shanghai">
+                        <div class="menu-overlay">
+                            <span class="cuisine-tag">Noodles</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Bihon Guisado & Lumpia Shanghai</h3>
+                        <p>Stir-fried rice noodles with vegetables and meat, served with crispy spring rolls</p>
+                        <span class="price">₱280</span>
+                        <button class="order-btn" onclick="cart.addItem({
+                            name: 'Bihon Guisado & Lumpia Shanghai',
+                            price: 280,
+                            image: 'images/IMG-20241128-WA0011.jpg',
+                            quantity: 1
+                        })">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="noodles">
+                    <div class="menu-image">
+                        <img src="images/IMG-20241128-WA0010.jpg" alt="Pancit Canton">
+                        <div class="menu-overlay">
+                            <span class="cuisine-tag">Noodles</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Pancit Canton</h3>
+                        <p>Stir-fried egg noodles with mixed vegetables and choice of meat - Perfect for sharing</p>
+                        <span class="price">₱280</span>
+                        <button class="order-btn" onclick="cart.addItem({
+                            name: 'Pancit Canton',
+                            price: 280,
+                            image: 'images/IMG-20241128-WA0010.jpg',
+                            quantity: 1
+                        })">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="noodles">
+                    <div class="menu-image">
+                        <img src="images/IMG-20241128-WA0009.jpg" alt="Kaiimasan a Miki and Lumpia Shanghai">
+                        <div class="menu-overlay">
+                            <span class="cuisine-tag">Noodles</span>
+                        </div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Kaiimasan a Miki and Lumpia Shanghai</h3>
+                        <p>Special Ilocano-style egg noodles served with crispy spring rolls - A local delicacy</p>
+                        <span class="price">₱280</span>
+                        <button class="order-btn" onclick="cart.addItem({
+                            name: 'Kaiimasan a Miki and Lumpia Shanghai',
+                            price: 280,
+                            image: 'images/IMG-20241128-WA0009.jpg',
+                            quantity: 1
+                        })">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="appetizers">
+                    <div class="menu-image">
+                        <img src="images/IMG-20241128-WA0018.jpg" alt="Classic Bruschetta">
                         <div class="menu-overlay">
                             <span class="cuisine-tag">Appetizer</span>
                         </div>
@@ -117,130 +320,27 @@
                         <button class="order-btn" onclick="cart.addItem({
                             name: 'Classic Bruschetta',
                             price: 280,
-                            image: 'https://images.unsplash.com/photo-1541014741259-de529411b96a',
+                            image: 'images/IMG-20241128-WA0018.jpg',
                             quantity: 1
                         })">Add to Cart</button>
                     </div>
                 </div>
 
-                <!-- Main Courses -->
-                <div class="menu-item" data-category="main">
+                <div class="menu-item" data-category="noodles">
                     <div class="menu-image">
-                        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e" alt="Ribeye Steak">
+                        <img src="images/IMG-20241128-WA0008.jpg" alt="Sotanghon Guisado & Lumpia Shanghai">
                         <div class="menu-overlay">
-                            <span class="cuisine-tag">Main Course</span>
+                            <span class="cuisine-tag">Noodles</span>
                         </div>
                     </div>
                     <div class="menu-item-content">
-                        <h3>Premium Ribeye Steak</h3>
-                        <p>12oz perfectly marbled ribeye, grilled to your preference with roasted vegetables</p>
-                        <span class="price">₱1,200</span>
-                        <button class="order-btn" onclick="cart.addItem({
-                            name: 'Premium Ribeye Steak',
-                            price: 1200,
-                            image: 'https://images.unsplash.com/photo-1600891964092-4316c288032e',
-                            quantity: 1
-                        })">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="menu-item" data-category="main">
-                    <div class="menu-image">
-                        <img src="https://images.unsplash.com/photo-1496074620649-6b1b02e5c1c8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JpbGxlZCUyMGNoaWNrZW58ZW58MHx8MHx8fDA%3D" alt="Grilled Chicken">
-                        <div class="menu-overlay">
-                            <span class="cuisine-tag">Main Course</span>
-                        </div>
-                    </div>
-                    <div class="menu-item-content">
-                        <h3>Herb-Grilled Chicken</h3>
-                        <p>Marinated chicken breast with fresh herbs, served with quinoa and seasonal vegetables</p>
-                        <span class="price">₱650</span>
-                        <button class="order-btn" onclick="cart.addItem({
-                            name: 'Herb-Grilled Chicken',
-                            price: 650,
-                            image: 'https://images.unsplash.com/photo-1496074620649-6b1b02e5c1c8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JpbGxlZCUyMGNoaWNrZW58ZW58MHx8MHx8fDA%3D',
-                            quantity: 1
-                        })">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Seafood -->
-                <div class="menu-item" data-category="seafood">
-                    <div class="menu-image">
-                        <img src="https://images.unsplash.com/photo-1551248429-40975aa4de74" alt="Grilled Salmon">
-                        <div class="menu-overlay">
-                            <span class="cuisine-tag">Seafood</span>
-                        </div>
-                    </div>
-                    <div class="menu-item-content">
-                        <h3>Grilled Atlantic Salmon</h3>
-                        <p>Fresh salmon fillet with lemon butter sauce and asparagus</p>
-                        <span class="price">₱850</span>
-                        <button class="order-btn" onclick="cart.addItem({
-                            name: 'Grilled Atlantic Salmon',
-                            price: 850,
-                            image: 'https://images.unsplash.com/photo-1551248429-40975aa4de74',
-                            quantity: 1
-                        })">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="menu-item" data-category="seafood">
-                    <div class="menu-image">
-                        <img src="https://plus.unsplash.com/premium_photo-1708077041271-aa4912a349a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2VhZm9vZCUyMHBhc3RhfGVufDB8fDB8fHww" alt="Seafood Pasta">
-                        <div class="menu-overlay">
-                            <span class="cuisine-tag">Seafood</span>
-                        </div>
-                    </div>
-                    <div class="menu-item-content">
-                        <h3>Seafood Linguine</h3>
-                        <p>Fresh pasta with shrimp, mussels, and calamari in white wine sauce</p>
-                        <span class="price">₱780</span>
-                        <button class="order-btn" onclick="cart.addItem({
-                            name: 'Seafood Linguine',
-                            price: 780,
-                            image: 'https://plus.unsplash.com/premium_photo-1708077041271-aa4912a349a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2VhZm9vZCUyMHBhc3RhfGVufDB8fDB8fHww',
-                            quantity: 1
-                        })">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Desserts -->
-                <div class="menu-item" data-category="desserts">
-                    <div class="menu-image">
-                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307" alt="Chocolate Lava Cake">
-                        <div class="menu-overlay">
-                            <span class="cuisine-tag">Dessert</span>
-                        </div>
-                    </div>
-                    <div class="menu-item-content">
-                        <h3>Chocolate Lava Cake</h3>
-                        <p>Warm chocolate cake with molten center, served with vanilla ice cream</p>
-                        <span class="price">₱320</span>
-                        <button class="order-btn" onclick="cart.addItem({
-                            name: 'Chocolate Lava Cake',
-                            price: 320,
-                            image: 'https://images.unsplash.com/photo-1551024506-0bccd828d307',
-                            quantity: 1
-                        })">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="menu-item" data-category="desserts">
-                    <div class="menu-image">
-                        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187" alt="Cheesecake">
-                        <div class="menu-overlay">
-                            <span class="cuisine-tag">Dessert</span>
-                        </div>
-                    </div>
-                    <div class="menu-item-content">
-                        <h3>New York Cheesecake</h3>
-                        <p>Classic cheesecake with berry compote and whipped cream</p>
+                        <h3>Sotanghon Guisado & Lumpia Shanghai</h3>
+                        <p>Stir-fried glass noodles with vegetables and meat, served with crispy spring rolls</p>
                         <span class="price">₱280</span>
                         <button class="order-btn" onclick="cart.addItem({
-                            name: 'New York Cheesecake',
+                            name: 'Sotanghon Guisado & Lumpia Shanghai',
                             price: 280,
-                            image: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187',
+                            image: 'images/IMG-20241128-WA0008.jpg',
                             quantity: 1
                         })">Add to Cart</button>
                     </div>
@@ -270,9 +370,10 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2024 QCY Grill Resto & Bar. Designed by <a href="https://www.youtube.com/@pomcodes" target="_blank" style="color: inherit; text-decoration: none;">@pomcodes.</a></p>
+                <p>&copy; 2024 QCY Grill Resto & Bar. Designed by <a href="author.html" target="_blank" style="color: inherit; text-decoration: none;">Mikkel Poulin.</a></p>
             </div>
-        </footer>
+        </div>
+    </footer>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src=".js/main.js"></script>
     <script src=".js/cart.js"></script>

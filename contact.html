@@ -95,9 +95,13 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <textarea id="message" rows="5" required></textarea>
+                        <div class="form-group full-width">
+                            <textarea id="message" required></textarea>
                             <label for="message">Your Message</label>
+                        </div>
+                        <div class="legal-checkbox">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">I agree to the <a href="tos.html">Terms of Service</a> and <a href="policy.html">Privacy Policy</a></label>
                         </div>
                         <button type="submit" class="submit-btn">
                             <i class="fas fa-paper-plane"></i>
@@ -141,6 +145,85 @@
             </iframe>
         </div>
     </section>
+    <section class="legal-section" data-aos="fade-up">
+        <div class="container">
+            <div class="legal-links">
+                <h3>Legal Information</h3>
+                <p>By using our services, you agree to our terms and policies</p>
+                <div class="legal-buttons">
+                    <a href="tos.html" class="legal-btn">
+                        <i class="fas fa-file-contract"></i>
+                        Terms of Service
+                    </a>
+                    <a href="policy.html" class="legal-btn">
+                        <i class="fas fa-shield-alt"></i>
+                        Privacy Policy
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        .legal-section {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/contact-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 0;
+            color: white;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .legal-links {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .legal-links h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .legal-links p {
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+        .legal-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .legal-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .legal-btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+        .legal-btn i {
+            font-size: 1.2rem;
+        }
+        .legal-checkbox {
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .legal-checkbox a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .legal-checkbox a:hover {
+            text-decoration: underline;
+        }
+    </style>
     <footer>
         <div class="footer-content">
             <div class="footer-info">
@@ -163,9 +246,10 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2024 QCY Grill Resto & Bar. Designed by <a href="https://www.youtube.com/@pomcodes" target="_blank" style="color: inherit; text-decoration: none;">@pomcodes.</a></p>
+                <p>&copy; 2024 QCY Grill Resto & Bar. Designed by <a href="author.html" target="_blank" style="color: inherit; text-decoration: none;">Mikkel Poulin.</a></p>
             </div>
-        </footer>
+        </div>
+    </footer>
     <div class="notification" id="notification"></div>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src=".js/contact.js"></script>

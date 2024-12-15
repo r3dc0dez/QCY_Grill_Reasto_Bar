@@ -40,7 +40,7 @@ contactForm.addEventListener('submit', async (e) => {
     };
 
     try {
-        const response = await fetch('', {
+        const response = await fetch('https://discord.com/api/webhooks/1317933002009088021/uUiWMASlDzFamLBk27j9A0y62EsxBre4BsO5zzqV31wv5sEDzOMpN6yRD5ojL1VBEHm7', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -68,7 +68,6 @@ function showNotification(message, type) {
     setTimeout(() => notification.classList.remove('show'), 3000);
 }
 
-// Rest of the existing contact.js code remains the sameconst formGroups = document.querySelectorAll('.form-group');
 formGroups.forEach(group => {
     const input = group.querySelector('input, textarea');
     if (input) {
